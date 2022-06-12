@@ -16,7 +16,5 @@
 .prettierignore
 
 # avoided files
-
-index.js
 css/theme1.css
 css/theme2.css
