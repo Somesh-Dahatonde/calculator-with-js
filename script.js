@@ -1,4 +1,4 @@
-const links = document.querySelectorAll("link");
+// const links = document.querySelectorAll("link");
 const toggleBtn = document.querySelectorAll("input");
 const prevOperandText = document.querySelector("[data-previous-operand]");
 const currentOperandText = document.querySelector("[data-current-operand]");
@@ -10,14 +10,6 @@ const operatorBtn = document.querySelectorAll("[data-operator]");
 let prevOperand = prevOperandText.innerText;
 let currentOperand = currentOperandText.innerText;
 let operation;
-
-function themeChange(i) {
-  if (i === "0") {
-    links[2].setAttribute("href", "");
-  } else {
-    links[2].setAttribute("href", `css/theme${i}.css`);
-  }
-}
 
 function reset() {
   prevOperand = "";
