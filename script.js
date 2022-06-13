@@ -1,4 +1,4 @@
-// const links = document.querySelectorAll("link");
+const links = document.querySelectorAll("link");
 const toggleBtn = document.querySelectorAll("input");
 const prevOperandText = document.querySelector("[data-previous-operand]");
 const currentOperandText = document.querySelector("[data-current-operand]");
@@ -11,11 +11,19 @@ let prevOperand = prevOperandText.innerText;
 let currentOperand = currentOperandText.innerText;
 let operation;
 
-function reset() {
+const themeChange = (links) => {
+  links.forEach((link) => {
+    link.href = link.href.includes("css/theme1")
+      ? "css/style.css"
+      : "css/theme2.css";
+  });
+};
+
+const reset = () => {
   prevOperand = "";
   currentOperand = "";
   operation = undefined;
-}
+};
 
 function deleteOperand() {
   currentOperand = currentOperand.toString().slice(0, -1);
