@@ -1,4 +1,4 @@
-const links = document.querySelectorAll("link");
+const link = document.querySelectorAll("link");
 const toggleBtn = document.querySelectorAll("input");
 const prevOperandText = document.querySelector("[data-previous-operand]");
 const currentOperandText = document.querySelector("[data-current-operand]");
@@ -10,13 +10,18 @@ const operatorBtn = document.querySelectorAll("[data-operator]");
 let prevOperand = prevOperandText.innerText;
 let currentOperand = currentOperandText.innerText;
 let operation;
+// const theme2 = document.getElementById("theme2");
+// import theme2 from "./css/theme2.css";
 
-const themeChange = (links) => {
-  links.forEach((link) => {
-    link.href = link.href.includes("css/theme1")
-      ? "css/style.css"
-      : "css/theme2.css";
-  });
+const themeChange = (link) => {
+  if (theme2.checked) {
+    link.href = "theme2";
+  } else if (theme2.checked === false) {
+    link.href = "theme1";
+  }
+  link.href = theme2;
+  document.getElementsByName("link").href = "theme2";
+  console.log("theme changed");
 };
 
 const reset = () => {
@@ -85,11 +90,11 @@ function displayNum() {
   }
 }
 
-toggleBtn.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    themeChange(btn.value);
-  });
-});
+// toggleBtn.forEach((btn) => {
+//   btn.addEventListener("click", () => {
+//     themeChange(btn.value);
+//   });
+// });
 
 resetBtn.addEventListener("click", () => {
   reset();
