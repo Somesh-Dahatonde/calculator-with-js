@@ -10,7 +10,7 @@
   <title>Calculator app</title>
 
   <!-- CSS -->
-  <link id="css-class" rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
   <!-- JAVASCRIPT -->
   <script defer src="script.js"></script>
@@ -23,13 +23,13 @@
       <h6>THEME</h6>
       <div class="div">
         <div class="input">
-          <input id="theme1" type="radio" name="theme" value="0" checked>
+          <input id="theme1" type="radio" name="theme" value="0" checked onclick="themeChange('theme1')">
           <label for="theme1">1</label>
 
-          <input id="theme2" type="radio" value="1" name="theme">
+          <input id="theme2" type="radio" value="1" name="theme" onclick="themeChange('theme2')">
           <label for="theme2">2</label>
 
-          <input id="theme3" type="radio" value="2" name="theme" onclick="themeChange()">
+          <input id="theme3" type="radio" value="2" name="theme" onclick="themeChange('theme3')">
           <label for="theme3">3</label>
         </div>
       </div>

@@ -1,3 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Spartan", sans-serif;
+  font-size: 32px;
+}
 :root {
   --bg-theme: hsl(0, 0%, 90%);
   --bg-toggle-keypad: hsl(0, 5%, 81%);
@@ -12,33 +23,118 @@
 }
 
 body {
+  height: 100vh;
   background-color: var(--bg-theme);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 label,
 h6 {
+  font-size: 13px;
+  color: var(--bg-keys);
+  position: relative;
+  left: 70px;
   color: var(--text-color);
+}
+.calculator {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+  align-items: center;
 }
 
 .header > h1 {
+  color: var(--bg-keys);
+  position: absolute;
+  left: -90px;
+  top: -15px;
+}
+.header > h1 {
   color: var(--text-color);
+  align-self: center;
 }
 
 .input {
+  height: 30px;
+  width: 80px;
+  border-radius: 30px;
   background-color: var(--bg-toggle-keypad);
+  position: relative;
+  left: 90px;
 }
 
+[id="theme1"],
+[id="theme2"],
+[id="theme3"] {
+  appearance: none;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 30px;
+  top: 7px;
+  transition: 0.5s;
+}
+
+[id="theme1"] {
+  left: 10px;
+}
+
+[id="theme2"] {
+  left: 33px;
+}
+
+[id="theme3"] {
+  left: 55px;
+}
 input:checked {
   background-color: var(--bg-result-toggle-key);
+}
+
+label {
+  top: -40px;
+}
+
+label[for="theme1"] {
+  left: 13px;
+}
+
+label[for="theme2"] {
+  left: 20px;
+}
+
+label[for="theme3"] {
+  left: 26px;
 }
 
 .user-input {
   background-color: var(--bg-screen);
   color: var(--text-color);
+  height: 80px;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-right: 10px;
+  color: white;
+  overflow: hidden;
 }
 
 .grid-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4, 70px);
+  grid-template-rows: repeat(5, 70px);
   background-color: var(--bg-toggle-keypad);
+  padding: 15px 10px;
+  border-radius: 10px;
 }
 
 .grid-container > button {

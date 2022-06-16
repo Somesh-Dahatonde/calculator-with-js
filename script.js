@@ -1,4 +1,3 @@
-const link = document.querySelectorAll("link");
 const toggleBtn = document.querySelectorAll("input");
 const prevOperandText = document.querySelector("[data-previous-operand]");
 const currentOperandText = document.querySelector("[data-current-operand]");
@@ -13,15 +12,16 @@ let operation;
 // const theme2 = document.getElementById("theme2");
 // import theme2 from "./css/theme2.css";
 
-const themeChange = (link) => {
-  if (theme2.checked) {
-    link.href = "theme2";
-  } else if (theme2.checked === false) {
-    link.href = "theme1";
+const themeChange = (tmemeselect) => {
+  const link = document.querySelectorAll("link");
+  console.log(link);
+  if (tmemeselect === "theme1") {
+    link[0].href = "./css/style.css";
+  } else if (tmemeselect === "theme2") {
+    link[0].href = "./css/theme1.css";
+  } else if (tmemeselect === "theme3") {
+    link[0].href = "./css/theme2.css";
   }
-  link.href = theme2;
-  document.getElementsByName("link").href = "theme2";
-  console.log("theme changed");
 };
 
 const reset = () => {
