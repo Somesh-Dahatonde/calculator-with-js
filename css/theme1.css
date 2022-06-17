@@ -46,18 +46,22 @@ h6 {
   margin: auto;
   align-items: center;
 }
-
+.header {
+  display: flex;
+  margin: 50px 0 10px;
+  position: relative;
+}
 .header > h1 {
   color: var(--bg-keys);
   position: absolute;
   left: -90px;
   top: -15px;
-}
-.header > h1 {
   color: var(--text-color);
   align-self: center;
 }
-
+.header > h6 {
+  align-self: center;
+}
 .input {
   height: 30px;
   width: 80px;
@@ -125,6 +129,9 @@ label[for="theme3"] {
   color: white;
   overflow: hidden;
 }
+.user-input > .previous-operand {
+  font-size: 15px;
+}
 
 .grid-container {
   display: grid;
@@ -145,6 +152,13 @@ label[for="theme3"] {
   background-color: var(--bg-keys);
   color: var(--text-color);
   box-shadow: 0 5px var(--key-shadow-keys);
+}
+button:active {
+  transform: translateY(2px);
+}
+
+.column-span {
+  grid-column: span 2;
 }
 
 button:nth-child(17),
