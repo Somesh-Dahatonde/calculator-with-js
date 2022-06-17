@@ -138,6 +138,10 @@ label[for="theme3"] {
 }
 
 .grid-container > button {
+  margin: 0 8px;
+  padding: 8px 0;
+  border-radius: 5px;
+  border: none;
   background-color: var(--bg-keys);
   color: var(--text-color);
   box-shadow: 0 5px var(--key-shadow-keys);
@@ -148,10 +152,43 @@ button:nth-child(4) {
   background-color: var(--bg-del-reset-key);
   box-shadow: 0 5px var(--key-shadow-del-reset);
   color: var(--bg-keys);
+  font-size: 18px;
+  padding: 17px 0;
 }
 
 button:nth-child(18) {
   background-color: var(--bg-result-toggle-key);
   box-shadow: 0 5px var(--key-shadow-result);
   color: white;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  font-size: 11px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .calculator {
+    width: 350px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(4, 82px);
+    grid-template-rows: repeat(5, 65px);
+  }
+
+  .grid-container > button {
+    margin: 0 8px;
+    padding: 5px 0;
+  }
+
+  button:nth-child(17),
+  button:nth-child(4) {
+    padding: 13px 0;
+  }
 }
