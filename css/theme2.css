@@ -60,3 +60,34 @@ button:nth-child(18) {
   box-shadow: 0 5px var(--key-shadow-result);
   color: var(--text-result-color);
 }
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  font-size: 11px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .calculator {
+    width: 350px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(4, 82px);
+    grid-template-rows: repeat(5, 65px);
+  }
+
+  .grid-container > button {
+    margin: 0 8px;
+    padding: 5px 0;
+  }
+
+  button:nth-child(17),
+  button:nth-child(4) {
+    padding: 13px 0;
+  }
+}
