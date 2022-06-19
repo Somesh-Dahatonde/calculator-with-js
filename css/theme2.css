@@ -13,39 +13,139 @@
 }
 
 body {
+  height: 100vh;
   background-color: var(--bg-theme);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 label,
 h6 {
+  color: var(--bg-keys);
+  position: absolute;
+  left: -90px;
+  top: -15px;
   color: var(--text-color);
+  align-self: center;
 }
-
+.calculator {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+  align-items: center;
+}
+.header {
+  display: flex;
+  margin: 50px 0 10px;
+  position: relative;
+}
 .header > h1 {
   color: var(--text-color);
 }
-
-.input {
-  background-color: var(--bg-toggle-keypad);
+.header > h6 {
+  align-self: center;
 }
 
+[id="theme1"],
+[id="theme2"],
+[id="theme3"] {
+  appearance: none;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 30px;
+  top: 7px;
+  transition: 0.5s;
+}
+
+[id="theme1"] {
+  left: 10px;
+}
+
+[id="theme2"] {
+  left: 33px;
+}
+
+[id="theme3"] {
+  left: 55px;
+}
+
+.input {
+  height: 30px;
+  width: 80px;
+  border-radius: 30px;
+  background-color: var(--bg-toggle-keypad);
+  position: relative;
+  left: 90px;
+}
+label {
+  top: -40px;
+}
+
+label[for="theme1"] {
+  left: 13px;
+}
+
+label[for="theme2"] {
+  left: 20px;
+}
+
+label[for="theme3"] {
+  left: 26px;
+}
 input:checked {
   background-color: var(--bg-result-toggle-key);
 }
 
 .user-input {
   background-color: var(--bg-toggle-keypad);
+  background-color: var(--bg-screen);
   color: var(--text-color);
+  height: 80px;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-right: 10px;
+  color: white;
+  overflow: hidden;
+}
+.user-input > .previous-operand {
+  font-size: 15px;
 }
 
 .grid-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4, 70px);
+  grid-template-rows: repeat(5, 70px);
   background-color: var(--bg-toggle-keypad);
+  padding: 15px 10px;
+  border-radius: 10px;
 }
 
 .grid-container > button {
   background-color: var(--bg-keys);
   color: var(--text-color);
   box-shadow: 0 5px var(--key-shadow-keys);
+  margin: 0 8px;
+  padding: 8px 0;
+  border-radius: 5px;
+  border: none;
+}
+button:active {
+  transform: translateY(2px);
+}
+
+.column-span {
+  grid-column: span 2;
 }
 
 button:nth-child(17),
@@ -53,6 +153,8 @@ button:nth-child(4) {
   background-color: var(--bg-del-reset-key);
   box-shadow: 0 5px var(--key-shadow-del-reset);
   color: white;
+  font-size: 18px;
+  padding: 17px 0;
 }
 
 button:nth-child(18) {
