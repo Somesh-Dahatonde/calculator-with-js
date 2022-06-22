@@ -13,7 +13,7 @@ let operation;
 // import theme2 from "./css/theme2.css";
 
 const themeChange = (tmemeselect) => {
-  const link = document.querySelectorAll("link");
+  const link = document.getElementsByTagName("link");
   console.log(link);
   if (tmemeselect === "theme1") {
     link[0].href = "./css/style.css";
